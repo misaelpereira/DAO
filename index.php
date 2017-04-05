@@ -13,9 +13,18 @@ echo $root;
 //$search = Usuario::search("m");
 //echo json_encode($search);
 
-$acesso = new Usuario();
-$acesso->logar("maite", "321");
+//$acesso = new Usuario();
+//$acesso->logar("maite", "321");
 
-echo $acesso;
+//echo $acesso;
+
+
+$newUsuario = new Usuario("Misael Pereira", "123213213132131");
+
+
+$newUsuario->insert();
+
+
+echo $newUsuario;
 
 ?>
