@@ -103,7 +103,24 @@ class Usuario {
 
 	}
 
-	public function __construct($login = "", $senha = ""){
+	public function update($login, $senha)
+	{
+
+		$this->setDeslogin($login);
+		$this->setDessenha($senha);
+
+		$sql = new Sql();
+
+		$sql->query("UPDATE tab_usuario SET deslogin = :LOGIN , dessenha = :SENHA WHERE idusuario = :ID", array(
+			":LOGIN"=>$this->getDeslogin(),
+			":SENHA"=>$this->getDessenha(),
+			":ID"=>$this->getIdusuario()
+			));
+
+	}
+
+	public function __construct($login = "", $senha = "")
+	{
 		$this->setDeslogin($login);
 		$this->setDessenha($senha);
 	}

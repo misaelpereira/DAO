@@ -19,12 +19,17 @@ echo $root;
 //echo $acesso;
 
 
-$newUsuario = new Usuario("Misael Pereira", "123213213132131");
+//$newUsuario = new Usuario("Misael Pereira", "123213213132131");
+//$newUsuario->insert();
+//echo $newUsuario;
 
+$usuarioAtt = new Usuario();
 
-$newUsuario->insert();
+$usuarioAtt->loadById(8);
 
+$usuarioAtt->update("Pedro", "password");
 
-echo $newUsuario;
+echo $usuarioAtt;
+
 
 ?>
