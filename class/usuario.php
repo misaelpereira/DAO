@@ -119,6 +119,17 @@ class Usuario {
 
 	}
 
+	public function deletUser()
+	{
+		$sql = new Sql();
+		$sql->query("DELETE FROM tab_usuario WHERE idusuario = :ID", array(
+			':ID'=>$this->getIdusuario()
+			));
+		$this->setIdusuario(0);
+		$this->setDeslogin("");
+		$this->setDessenha("");
+	}
+
 	public function __construct($login = "", $senha = "")
 	{
 		$this->setDeslogin($login);

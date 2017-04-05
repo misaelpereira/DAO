@@ -23,13 +23,17 @@ echo $root;
 //$newUsuario->insert();
 //echo $newUsuario;
 
-$usuarioAtt = new Usuario();
+//$usuarioAtt = new Usuario();
+//$usuarioAtt->loadById(8);
+//$usuarioAtt->update("Pedro", "password");
+//echo $usuarioAtt;
 
-$usuarioAtt->loadById(8);
 
-$usuarioAtt->update("Pedro", "password");
+//DELETANDO USUARIO
 
-echo $usuarioAtt;
-
+$deletUser = new Usuario();
+$deletUser->loadById(10);
+$deletUser->deletUser();
+echo $deletUser;
 
 ?>
